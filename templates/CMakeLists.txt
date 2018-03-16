@@ -15,8 +15,8 @@ endmacro()
 #add_exec(operator_vector_excercise)
 #add_exec(operator_vector_solution)
 
-#add_exec(circular_buffer)
-
+add_exec(circular_buffer_excercise)
+#add_exec(circular_buffer_solution)
 
 
 #add_exec(template_array2)
