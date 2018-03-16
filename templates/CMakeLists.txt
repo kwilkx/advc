@@ -5,14 +5,19 @@ macro(add_exec file)
     gtest_add_tests(${file} "" ${file}.cpp)
 endmacro()
 
-#add_exec(simple_string_operators_solution)
-#add_exec(simple_string_functions_solution)
 #add_exec(simple_string_functions_excercise)
+#add_exec(simple_string_functions_solution)
+#add_exec(simple_string_operators_solution)
 
-#add_exec(template_array_solution)
 #add_exec(template_array_excercise)
+#add_exec(template_array_solution)
+
+#add_exec(operator_vector_excercise)
+#add_exec(operator_vector_solution)
 
 #add_exec(circular_buffer)
-#add_exec(operator_vector)
+
+
+
 #add_exec(template_array2)
 #add_exec(template_array3)

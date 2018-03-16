@@ -2,7 +2,7 @@
 #include <iostream>
 #include <sstream>
 
-template <typename T>
+template<typename T>
 std::ostream& operator<<(std::ostream& os, const std::vector<T>& container) {
     return os;
 }
@@ -17,7 +17,7 @@ TEST(TemplatedOperator, emptyVector) {
 }
 
 TEST(TemplatedOperator, stringVector) {
-    std::vector<std::string> data{{"a", "b", "c"}};
+    std::vector<std::string> data { { "a", "b", "c" } };
     std::stringstream ss;
 
     ss << data;
