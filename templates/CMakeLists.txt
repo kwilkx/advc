@@ -10,7 +10,7 @@ endmacro()
 #add_exec(simple_string_functions_excercise)
 
 #add_exec(template_array_solution)
-add_exec(template_array_excercise)
+#add_exec(template_array_excercise)
 
 #add_exec(circular_buffer)
 #add_exec(operator_vector)

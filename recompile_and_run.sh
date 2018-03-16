@@ -1,4 +1,6 @@
 #!/bin/sh
 
-rm -rf build && mkdir build && cd build && cmake .. && make -j && ./templates/*excercise
+rm -rf build && mkdir build && cd build && cmake .. && make -j 
+./templates/*excercise
+./templates/*solution
 
