@@ -8,5 +8,8 @@ endmacro()
 #add_exec(min_element_excercise)
 #add_exec(min_element_solution)
 
-add_exec(min_element_function_excercise)
+#add_exec(min_element_function_excercise)
 #add_exec(min_element_function_solution)
+
+#add_exec(shape_excercise)
+add_exec(shape_solution)
