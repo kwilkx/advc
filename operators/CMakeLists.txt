@@ -5,11 +5,5 @@ macro(add_exec file)
     gtest_add_tests(${file} "" ${file}.cpp)
 endmacro()
 
-#add_exec(min_element_excercise)
-#add_exec(min_element_solution)
-
-#add_exec(min_element_function_excercise)
-#add_exec(min_element_function_solution)
-
-#add_exec(shape_excercise)
-#add_exec(shape_solution)
+#add_exec(c_class_excercise)
+add_exec(c_class_solution)
