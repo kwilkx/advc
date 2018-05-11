@@ -9,6 +9,6 @@ enable_testing()
 include(GoogleTest)
 add_subdirectory(googletest/googletest)
 
-#add_subdirectory(templates)
+add_subdirectory(templates)
 add_subdirectory(pointers)
 add_subdirectory(operators)
