@@ -6,4 +6,5 @@ macro(add_exec file)
 endmacro()
 
 #add_exec(c_class_excercise)
-add_exec(c_class_solution)
+#add_exec(c_class_solution)
+add_exec(vector_3d_solution)

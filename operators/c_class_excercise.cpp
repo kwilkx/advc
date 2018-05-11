@@ -4,6 +4,7 @@
 
 using namespace std;
 
+namespace one {
 class C {
 public:
     C(const char* text) {
@@ -12,15 +13,15 @@ public:
     }
 
     ~C() {
-        delete [] table;
+        delete[] table;
     }
 
-    C& operator=(const C& other)
-    {
+    C& operator=(const C& other) {
         return *this;
     }
-    C& operator=(C&& other)
-    {
+
+    C& operator=(C&& other) {
+
         return *this;
     }
 
@@ -31,12 +32,43 @@ public:
 private:
     char* table;
 };
+}
+
+namespace two {
+template<typename T>
+class C {
+public:
+    C(T* data, size_t size) {
+        table = new T[size];
+        memcpy(table, data, size);
+        this->size = size;
+    }
+    ~C() {
+        delete[] table;
+    }
+
+    C& operator=(const C& other) {
+        return *this;
+    }
+
+    C& operator=(C&& other) {
+        return *this;
+    }
+    char* getPtr() {
+        return table;
+    }
+
+private:
+    char* table;
+    size_t size;
+};
+} //namespace two
 
 TEST(C_class, copy_test) {
-    C c1("this is a test");
-    C c2("someting other");
-    C c3("lets see if that works in case of longer string");
-    C c4("bye!");
+    one::C c1("this is a test");
+    one::C c2("someting other");
+    one::C c3("lets see if that works in case of longer string");
+    one::C c4("bye!");
 
     EXPECT_STREQ(c1.getStr(), "this is a test");
 
@@ -51,10 +83,10 @@ TEST(C_class, copy_test) {
 }
 
 TEST(C_class, move_test) {
-    C c1("this is a test");
-    C c2("someting other");
-    C c3("lets see if that works in case of longer string");
-    C c4("bye!");
+    one::C c1("this is a test");
+    one::C c2("someting other");
+    one::C c3("lets see if that works in case of longer string");
+    one::C c4("bye!");
 
     EXPECT_STREQ(c1.getStr(), "this is a test");
 
@@ -63,7 +95,8 @@ TEST(C_class, move_test) {
     EXPECT_EQ(c2.getStr(), nullptr);
 
     c1 = move(c3);
-    EXPECT_STREQ(c1.getStr(), "lets see if that works in case of longer string");
+    EXPECT_STREQ(c1.getStr(),
+            "lets see if that works in case of longer string");
     EXPECT_EQ(c3.getStr(), nullptr);
 
     c1 = move(c4);
